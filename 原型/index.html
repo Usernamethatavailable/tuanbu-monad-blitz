@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#f7f6ef">
+  <title>栗栗熊拼单 · 团簿</title>
+  <link rel="stylesheet" href="style.css">
+  <script defer src="app.js"></script>
+</head>
+<body>
+  <header class="masthead">
+    <div class="masthead-inner">
+      <span class="brand"><span class="brand-mark" aria-hidden="true"><i></i></span>团簿</span>
+      <span class="simulation">付款与记录均为模拟</span>
+    </div>
+  </header>
+
+  <main class="page">
+    <article id="group-view" class="group-card" aria-labelledby="item-title">
+      <div class="product-image">
+        <img src="assets/plush.webp" alt="系着墨绿围巾的奶油棕色栗栗熊棉花娃娃" fetchpriority="high">
+      </div>
+      <div class="group-body">
+        <h1 id="item-title">栗栗熊<span>棉花娃娃</span></h1>
+        <p class="spec"><i class="swatch" aria-hidden="true"></i>奶油棕<span class="spec-divider" aria-hidden="true"></span>20 cm</p>
+        <div class="factory-line"><span>收款工厂</span><strong data-field="payee">山涧布偶工坊</strong></div>
+
+        <div class="price-story">
+          <h2 data-field="groupHint">再拼 1 份，单价降到 66 元</h2>
+          <p data-field="groupPriceNote">已有 4 份。先付 88 元，截止满 5 份，每份退 22 元。</p>
+        </div>
+        <button class="btn-main buy" data-action="primary" type="button"><span data-field="primaryLabel">88 元拼一份</span></button>
+        <button class="quiet-link terms" data-action="sheet-group" type="button">查看拼团约定</button>
+      </div>
+    </article>
+
+    <article id="order-view" class="receipt" aria-labelledby="order-heading" hidden>
+      <div class="receipt-top">
+        <p class="receipt-caption">我的订单</p>
+        <h1 id="order-heading" data-field="orderTitle" aria-live="polite">已拼一份</h1>
+        <p class="order-hint" data-field="orderHint">订单已登记，等待拼团截止。</p>
+      </div>
+      <div class="receipt-body">
+        <div class="order-product">
+          <img src="assets/plush.webp" alt="" width="64" height="64">
+          <div><strong>栗栗熊棉花娃娃</strong><p>奶油棕 · 20 cm</p></div>
+          <span class="quantity">× 1</span>
+        </div>
+        <dl class="order-rows">
+          <div><dt>已付金额</dt><dd>¥88</dd></div>
+          <div><dt data-field="priceLabel">当前单价</dt><dd data-field="finalAmount">¥66</dd></div>
+          <div class="refund-row"><dt data-field="refundLabel">预计退款</dt><dd data-field="refundAmount">¥22</dd></div>
+        </dl>
+        <dl class="order-rows fulfillment">
+          <div><dt>收款工厂</dt><dd data-field="payee">山涧布偶工坊</dd></div>
+          <div><dt>交付进度</dt><dd data-field="delivery">待工厂接单</dd></div>
+        </dl>
+        <button class="btn-main receive" data-action="member" type="button" hidden>确认收到我的一份</button>
+        <div class="order-links">
+          <button class="quiet-link" data-action="sheet-records" type="button">查看本团记录</button>
+          <button class="quiet-link" data-action="sheet-group" type="button">查看拼团约定</button>
+        </div>
+      </div>
+    </article>
+  </main>
+
+  <dialog id="detail" aria-labelledby="detail-title">
+    <div class="sheet-top"><h2 id="detail-title">拼团约定</h2><button class="close" data-action="close" type="button" aria-label="关闭弹窗"></button></div>
+    <div id="detail-body"></div>
+  </dialog>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#dee5df">
+  <title>棉花娃娃定制团 · 团簿</title>
+  <link rel="stylesheet" href="/shop.css">
+  <script defer src="/shop.js"></script>
+  <script defer src="/ledger.js"></script>
+</head>
+<body>
+  <nav class="tab-strip" aria-label="身份页面">
+    <div id="journey-tabs" class="browser-tabs" role="tablist" aria-label="角色">
+      <button id="tab-leader" type="button" role="tab" data-role="leader" aria-selected="true" aria-controls="journey-content"><i class="tab-icon tab-ledger" aria-hidden="true"></i>团长</button>
+      <button id="tab-buyer" type="button" role="tab" data-role="buyer" aria-selected="false" aria-controls="journey-content" tabindex="-1"><i class="tab-icon tab-bag" aria-hidden="true"></i>拼友</button>
+      <button id="tab-factory" type="button" role="tab" data-role="factory" aria-selected="false" aria-controls="journey-content" tabindex="-1"><i class="tab-icon tab-spool" aria-hidden="true"></i>工厂</button>
+    </div>
+  </nav>
+  <header class="masthead">
+    <div class="frame mast-inner">
+      <span class="brand"><i class="brand-icon" aria-hidden="true"></i>团簿</span>
+      <h1>用 Web3 技术让拼团交易全程透明可追溯</h1>
+      <button class="new-group" type="button" data-action="new">新开团</button>
+    </div>
+  </header>
+  <main class="frame work-area">
+    <section id="journey-content" class="role-page" role="tabpanel" aria-labelledby="tab-leader" tabindex="0">
+      <p class="role-panel-note" role="status">正在读取团单…</p>
+    </section>
+    <footer id="group-footer" aria-label="本团记录">
+      <button id="proof-open" type="button" data-action="ledger">全过程记录上链保存</button>
+      <button id="funds-open" type="button" data-action="ledger" data-ledger-view="flows">资金流向可追溯</button>
+    </footer>
+  </main>
+  <dialog id="detail" aria-labelledby="detail-title">
+    <div class="sheet-top"><h2 id="detail-title">团单详情</h2><button class="close" type="button" data-action="close" aria-label="关闭弹窗"></button></div>
+    <div id="detail-body"></div>
+  </dialog>
+  <dialog id="proof-panel" aria-labelledby="proof-title">
+    <div class="sheet-top"><h2 id="proof-title">存证记录</h2><button id="proof-close" class="close" type="button" aria-label="关闭存证记录"></button></div>
+    <div id="proof-body"></div>
+  </dialog>
+</body>
+</html>

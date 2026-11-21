@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#dfe5dd">
+  <title>团簿 · 栗栗熊棉花娃娃</title>
+  <link rel="stylesheet" href="/journey.css">
+  <script defer src="/journey.js"></script>
+</head>
+<body>
+  <nav class="tab-strip" aria-label="身份页面">
+    <div id="journey-tabs" class="browser-tabs" role="tablist" aria-label="切换身份页面">
+      <button id="tab-leader" type="button" role="tab" data-role="leader" aria-selected="true" aria-controls="journey-content"><i class="tab-icon tab-ledger" aria-hidden="true"></i>团长</button>
+      <button id="tab-buyer" type="button" role="tab" data-role="buyer" aria-selected="false" aria-controls="journey-content" tabindex="-1"><i class="tab-icon tab-bag" aria-hidden="true"></i>拼友</button>
+      <button id="tab-factory" type="button" role="tab" data-role="factory" aria-selected="false" aria-controls="journey-content" tabindex="-1"><i class="tab-icon tab-spool" aria-hidden="true"></i>工厂</button>
+    </div>
+  </nav>
+  <header class="masthead">
+    <div class="frame mast-inner">
+      <div class="brand"><span class="brand-icon" aria-hidden="true"></span>团簿</div>
+      <span class="mock-note">付款与回执均为模拟</span>
+      <button type="button" class="new-group" data-action="new">新开团</button>
+    </div>
+  </header>
+  <main class="frame workspace">
+    <aside class="product" aria-labelledby="product-name">
+      <img class="sample" src="/assets/plush.webp" alt="系墨绿色围巾的栗栗熊棉花娃娃样品" width="300" height="225" fetchpriority="high">
+      <div class="product-copy">
+        <h1 id="product-name">栗栗熊<span>棉花娃娃定制团</span></h1>
+        <p class="spec"><i aria-hidden="true"></i>奶油棕<span aria-hidden="true">·</span>20 cm</p>
+        <button class="quiet-link product-terms" data-action="terms" type="button">拼团约定</button>
+      </div>
+    </aside>
+    <section class="role-page" aria-label="当前身份的操作">
+      <div id="journey-content" role="tabpanel" aria-labelledby="tab-leader" tabindex="0"><p class="role-panel-note" role="status">正在打开团单…</p></div>
+      <div id="journey-next"></div>
+    </section>
+    <section class="secondary" aria-label="团单与记录">
+      <details class="records">
+        <summary>本团记录</summary>
+        <div id="journey-records"></div>
+      </details>
+      <div class="bottom-bar">
+        <span class="group-id">团号 <b data-field="groupId">—</b></span>
+        <div><button class="quiet-link" type="button" data-action="money">收款明细</button><button class="quiet-link" type="button" data-action="share">分享团单</button></div>
+      </div>
+    </section>
+  </main>
+  <dialog id="detail" aria-labelledby="detail-title">
+    <div class="sheet-top"><h2 id="detail-title">团单详情</h2><button type="button" class="close" data-action="close" aria-label="关闭弹窗"></button></div>
+    <div id="detail-body"></div>
+  </dialog>
+</body>
+</html>

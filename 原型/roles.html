@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#f7f6ef">
+  <title>栗栗熊挂件拼印 · 团簿</title>
+  <link rel="stylesheet" href="/roles.css">
+  <script defer src="/roles.js"></script>
+</head>
+<body>
+  <header class="masthead">
+    <div class="frame mast-inner">
+      <span class="brand"><span class="brand-mark" aria-hidden="true"><i></i></span>团簿</span>
+      <span class="simulation">付款与回执均为模拟</span>
+    </div>
+  </header>
+  <main class="frame">
+    <article class="group" aria-labelledby="product-title">
+      <header class="product">
+        <img class="product-photo" src="/assets/charm.webp" alt="带绿围巾的栗栗熊亚克力挂件，带透明切边和金属扣" fetchpriority="high" width="170" height="170">
+        <div class="product-copy">
+          <h1 id="product-title">栗栗熊<span>亚克力挂件拼印</span></h1>
+          <p class="spec">10 枚 / 份<span aria-hidden="true">·</span>已定稿</p>
+          <p class="payee"><span>货款付给<strong>山涧印制工坊</strong></span><span>服务费付给<strong>团长</strong></span></p>
+          <button class="quiet-link terms" type="button" data-action="terms">查看拼团约定</button>
+        </div>
+      </header>
+      <div class="workspace">
+        <section class="participation" aria-label="按身份查看团单">
+          <div id="roles-tabs" class="role-tabs" role="tablist" aria-label="我的身份">
+            <button type="button" id="tab-member" data-role="member" role="tab" aria-controls="role-content" aria-selected="true">拼友</button>
+            <button type="button" id="tab-leader" data-role="leader" role="tab" aria-controls="role-content" aria-selected="false" tabindex="-1">团长</button>
+            <button type="button" id="tab-factory" data-role="factory" role="tab" aria-controls="role-content" aria-selected="false" tabindex="-1">工厂</button>
+          </div>
+          <div id="role-content" role="tabpanel" aria-labelledby="tab-member" tabindex="0">
+            <p class="role-panel-note" role="status">正在读取团单…</p>
+          </div>
+        </section>
+        <section class="history" aria-labelledby="history-title">
+          <div class="history-heading"><h2 id="history-title">本团时间线</h2><button type="button" class="quiet-link" data-action="money">金额明细</button></div>
+          <div id="timeline" aria-label="团单时间线"></div>
+        </section>
+      </div>
+      <footer class="group-foot">
+        <span>团号 <b data-field="groupId">—</b></span>
+        <button type="button" class="share-link" data-action="share">分享团单</button>
+      </footer>
+    </article>
+  </main>
+  <dialog id="detail" aria-labelledby="detail-title">
+    <div class="sheet-top"><h2 id="detail-title">团单详情</h2><button type="button" class="close" data-action="close" aria-label="关闭弹窗"></button></div>
+    <div id="detail-body"></div>
+  </dialog>
+</body>
+</html>
