@@ -10,6 +10,8 @@
 - [ReceiptRegistry 合约](https://testnet.monadscan.com/address/0x9a919f3f0767253618e4a969ceed5e98ac73e296) · [部署交易](https://testnet.monadscan.com/tx/0xad2950990907e54d1d7ff0983cf105d9fa7558a2a13f2ef7ea3393d96484b512)
 - [工厂报价存证示例](https://testnet.monadscan.com/tx/0xb3462362caf901c923e0396679aaa037e64e1f36b757c43736de759ef29228e0)
 
+隔离环境用 Monad 测试网跑完一笔 104 件的演示团，16 条单据均取得链上回执。模拟人民币账目为预付 ¥9,464、原路退款 ¥2,288、工厂实收 ¥6,864、团长服务费 ¥312，剩余冻结 ¥0。 [退差单据交易](https://testnet.monadscan.com/tx/0x3f5d26e78700578a6ba5dc18725bc80df05e3dc56a2afd2b278c593a4fa00b31) · [结算单据交易](https://testnet.monadscan.com/tx/0x85be7ea31985faf786a20765f0508731b8f9348ec790d9a4d55240a2e73595de)
+
 ## 运行
 
 ```shell
