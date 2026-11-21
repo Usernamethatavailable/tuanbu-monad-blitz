@@ -1,5 +1,6 @@
 import sqlite3
 import unittest
+from io import BytesIO
 from pathlib import Path
 from types import SimpleNamespace
 from unittest.mock import Mock
@@ -41,6 +42,16 @@ class LedgerTest(unittest.TestCase):
     def proof(self, config=None):
         snapshot = {'id': self.group, 'events': [{'id': self.event}]}
         return ledger.attach_anchors(self.db, snapshot, config)
+
+    def test_rpc_sends_application_user_agent(self):
+        writer = ledger.AnchorWriter(Path(':memory:'), self.config())
+        writer.http = Mock()
+        writer.http.open.return_value = BytesIO(b'{"jsonrpc":"2.0","id":1,"result":"0x279f"}')
+
+        self.assertEqual(writer.rpc('eth_chainId'), '0x279f')
+
+        request = writer.http.open.call_args.args[0]
+        self.assertEqual(request.get_header('User-agent'), 'TuAnBu/1.0')
 
     def test_network_switch_does_not_relabel_local_receipt(self):
         self.assertTrue(hasattr(ledger, 'ContractLedger'), 'Monad contract mode is missing')

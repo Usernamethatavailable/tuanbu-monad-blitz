@@ -132,7 +132,9 @@ class AnchorWriter(threading.Thread):
 
     def rpc(self, method, params=()):
         body = json.dumps({"jsonrpc": "2.0", "id": 1, "method": method, "params": params}).encode()
-        req = urllib.request.Request(self.rpc_url, body, {"Content-Type": "application/json"})
+        req = urllib.request.Request(self.rpc_url, body, {
+            "Content-Type": "application/json", "User-Agent": "TuAnBu/1.0",
+        })
         try:
             with self.http.open(req, timeout=4) as response:
                 result = json.load(response)
