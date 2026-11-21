@@ -4,6 +4,12 @@
 
 工厂报价、接单、退款和分账等产生可分享的单据。应用把公开单据的 SHA-256 摘要登记到 Monad 测试网合约。浏览器可以通过公开 RPC 重新核对摘要和链上事件。人民币支付、退款和物流为演示数据。
 
+## Monad 测试网
+
+- 网络为 Monad Testnet，链 ID `10143`。
+- [ReceiptRegistry 合约](https://testnet.monadscan.com/address/0x9a919f3f0767253618e4a969ceed5e98ac73e296) · [部署交易](https://testnet.monadscan.com/tx/0xad2950990907e54d1d7ff0983cf105d9fa7558a2a13f2ef7ea3393d96484b512)
+- [工厂报价存证示例](https://testnet.monadscan.com/tx/0xb3462362caf901c923e0396679aaa037e64e1f36b757c43736de759ef29228e0)
+
 ## 运行
 
 ```shell
